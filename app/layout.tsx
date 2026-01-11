@@ -20,21 +20,35 @@ export const metadata: Metadata = {
   description:
     "Criamos sobremesas artesanais que contam histórias e celebram os momentos mais preciosos da vida. Confeitaria artesanal no Lobito, Angola.",
   generator: "v0.app",
+  metadataBase: new URL("https://anattoli.vercel.app"),
   alternates: {
-    canonical: "https://anattoli-confeitaria.example/",
+    canonical: "/",
+  },
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
   openGraph: {
     siteName: "Anattoli Confeitaria",
     title: "Anattoli Confeitaria — Sobremesas Artesanais Feitas com Propósito",
     description: "Onde os Sonhos se Tornam Tesouros Doces. Confeitaria artesanal no Lobito, Angola.",
     type: "website",
-    url: "https://anattoli-confeitaria.example/",
+    url: "https://anattoli.vercel.app/",
     locale: "pt_AO",
+    images: [
+      {
+        url: "/logo.png",
+        width: 800,
+        height: 800,
+        alt: "Anattoli Confeitaria Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Anattoli Confeitaria — Sobremesas Artesanais",
     description: "Onde os Sonhos se Tornam Tesouros Doces",
+    images: ["/logo.png"],
   },
 }
 
