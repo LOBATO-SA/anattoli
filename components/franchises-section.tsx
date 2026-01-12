@@ -38,17 +38,33 @@ export function FranchisesSection() {
             <Reveal>
               <div>
                 <h3 className="text-amber-700 text-lg font-semibold uppercase tracking-widest mb-4">
-                  Oportunidade de Negócio
+                  Parceria para Pastelarias
                 </h3>
-                <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">Junte-se à Família Anattoli</h2>
+                <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">Divulgue os seus Doces na Anattoli</h2>
                 <p className="text-neutral-700 leading-relaxed mb-8 text-lg">
-                  Faça parte da marca de confeitaria artesanal mais amada de Angola. Traga a magia da Anattoli para a
-                  sua cidade e crie momentos doces para sua comunidade.
+                  Tem uma pastelaria? Junte-se à nossa plataforma, alcance mais clientes e aumente as suas vendas.
+                  Nós cuidamos da tecnologia e do marketing, você foca no criar sabores inesquecíveis.
                 </p>
 
                 {/* Features */}
                 <div className="space-y-6 mb-8">
-                  {franchiseFeatures.map((feature, index) => {
+                  {[
+                    {
+                      icon: TrendingUp,
+                      title: "Aumento de Vendas",
+                      description: "Alcance novos clientes que procuram doces de qualidade na sua região.",
+                    },
+                    {
+                      icon: Users,
+                      title: "Visibilidade Online",
+                      description: "Tenha uma presença digital profissional sem custos de desenvolvimento.",
+                    },
+                    {
+                      icon: Rocket,
+                      title: "Gestão Simplificada",
+                      description: " Ferramentas intuitivas para gerir os seus pedidos e catálogo.",
+                    },
+                  ].map((feature, index) => {
                     const Icon = feature.icon
                     return (
                       <motion.div
@@ -73,23 +89,25 @@ export function FranchisesSection() {
                 <Reveal>
                   <div className="flex gap-8 mb-8">
                     <div>
-                      <p className="text-4xl font-bold text-amber-700">15+</p>
-                      <p className="text-neutral-600 text-sm">Localizações</p>
+                      <p className="text-4xl font-bold text-amber-700">50+</p>
+                      <p className="text-neutral-600 text-sm">Parceiros Ativos</p>
                     </div>
                     <div>
-                      <p className="text-4xl font-bold text-amber-700">Em Crescimento</p>
-                      <p className="text-neutral-600 text-sm">Em Angola</p>
+                      <p className="text-4xl font-bold text-amber-700">+200%</p>
+                      <p className="text-neutral-600 text-sm">Crescimento Médio</p>
                     </div>
                   </div>
                 </Reveal>
 
-                <motion.button
-                  className="bg-amber-700 hover:bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Tornar-se Franqueado
-                </motion.button>
+                <a href="/register">
+                  <motion.button
+                    className="bg-amber-700 hover:bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Criar Conta de Parceiro
+                  </motion.button>
+                </a>
               </div>
             </Reveal>
           </motion.div>
@@ -103,7 +121,7 @@ export function FranchisesSection() {
             className="rounded-2xl overflow-hidden"
           >
             <Image
-              src="/modern-artisanal-bakery-confectionery-shop-interio.jpg"
+              src="/images/luxury-bakery-confectionery-showcase-with-elegant-.jpg"
               alt="Loja Anattoli - Interior"
               width={600}
               height={700}

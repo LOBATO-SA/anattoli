@@ -34,9 +34,9 @@ export function Footer() {
 
   return (
     <footer className="bg-neutral-900 text-white border-t border-neutral-800">
-      <div className="container-custom py-16 lg:py-20">
+      <div className="container-custom py-12 ">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-12">
+        <div className="grid grid-cols-1 py-12 lg:grid-cols-12 gap-12 lg:gap-16 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-4">
             <motion.div

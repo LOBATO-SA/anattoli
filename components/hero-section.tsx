@@ -113,7 +113,7 @@ export function HeroSection() {
               </div>
               <div className="mt-2 text-5xl md:text-7xl lg:text-8xl">
                 <span className="font-dancing bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-600 bg-clip-text text-transparent drop-shadow-sm pb-2 block">
-                  <AnimatedText text="Tesouros Doces" delay={1.5} />
+                  <AnimatedText text="Relíquia de sabor" delay={1.5} />
                 </span>
               </div>
             </h1>

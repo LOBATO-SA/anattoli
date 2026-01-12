@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 import { Menu, X } from "lucide-react"
 
 export function Header() {
@@ -31,7 +32,14 @@ export function Header() {
     }
   }, [])
 
-  const navItems = ["Início", "Sobre Nós", "Produtos", "Galeria", "Contacto"]
+  const navItems = [
+    { name: "Início", path: "/" },
+    { name: "Sobre Nós", path: "/#sobre-nos" },
+    { name: "Produtos", path: "/products" },
+    { name: "Galeria", path: "/gallery" },
+    { name: "Contacto", path: "/contact" },
+  ]
+
   const isActive = isScrolled || isHovered || isMobileMenuOpen
 
   return (
@@ -75,8 +83,8 @@ export function Header() {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
-              <a
-                href="#"
+              <Link
+                href="/"
                 className={cn(
                   "text-xl lg:text-2xl font-bold tracking-tight transition-colors",
                   "text-amber-500 hover:text-amber-400"
@@ -84,23 +92,24 @@ export function Header() {
                 aria-label="Anattoli Confeitaria Home"
               >
                 Anattoli
-              </a>
+              </Link>
             </motion.div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
-                <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(" ", "-")}`}
+                <Link
+                  key={item.name}
+                  href={item.path}
                   className={cn(
                     "text-sm font-medium transition-colors",
                     "text-gray-300 hover:text-amber-400"
                   )}
-                  whileHover={{ scale: 1.05 }}
                 >
-                  {item}
-                </motion.a>
+                  <motion.span whileHover={{ scale: 1.05 }} className="inline-block">
+                    {item.name}
+                  </motion.span>
+                </Link>
               ))}
             </nav>
 
@@ -137,17 +146,20 @@ export function Header() {
             className="fixed inset-0 z-40 bg-black/95 flex flex-col items-center justify-center space-y-8 md:hidden"
           >
             {navItems.map((item, index) => (
-              <motion.a
-                key={item}
-                href={`#${item.toLowerCase().replace(" ", "-")}`}
+              <Link
+                key={item.name}
+                href={item.path}
                 className="text-2xl font-medium text-amber-500 hover:text-white transition-colors"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + index * 0.1 }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                {item}
-              </motion.a>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + index * 0.1 }}
+                >
+                  {item.name}
+                </motion.div>
+              </Link>
             ))}
             <motion.button
               className="bg-amber-700 hover:bg-amber-600 text-white px-8 py-3 rounded-full text-lg font-medium transition-colors"

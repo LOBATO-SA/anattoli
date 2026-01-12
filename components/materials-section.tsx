@@ -82,7 +82,7 @@ export function MaterialsSection() {
             className="rounded-2xl overflow-hidden"
           >
             <Image
-              src="/elegant-portrait-of-confident-female-pastry-chef-i.jpg"
+              src="/images/anattoli.png"
               alt="Juliana Anattoli - Fundadora & Diretora Criativa"
               width={500}
               height={600}

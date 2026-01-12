@@ -118,9 +118,26 @@ export function FeaturedProducts() {
             </motion.div>
           ))}
         </motion.div>
+
+
+        <div className="mt-16 text-center">
+          <a href="/products">
+            <motion.button
+              className="px-8 py-4 bg-amber-700 text-white rounded-full font-bold text-lg hover:bg-amber-600 transition-colors shadow-lg hover:shadow-amber-500/25"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              Ver Todos os Produtos
+            </motion.button>
+          </a>
+        </div>
       </div>
 
       <QuickLookModal product={selectedProduct} isOpen={isModalOpen} onClose={closeModal} />
-    </section>
+    </section >
   )
 }
