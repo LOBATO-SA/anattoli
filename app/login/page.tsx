@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 
-export default function RegisterPage() {
+export default function LoginPage() {
     return (
         <div className="min-h-screen flex flex-col lg:flex-row bg-white">
             {/* Left Side - Video */}
@@ -13,13 +13,13 @@ export default function RegisterPage() {
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover opacity-80"
                 >
-                    <source src="/videos/corte_bolo.mp4" type="video/mp4" />
+                    <source src="/videos/bolachas.mp4" type="video/mp4" />
                     Seu navegador não suporta vídeos.
                 </video>
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute bottom-0 left-0 p-8 text-white z-10 hidden lg:block">
-                    <h2 className="text-4xl font-bold font-dancing mb-2 text-amber-500">Junte-se a Nós</h2>
-                    <p className="text-lg text-gray-200">Leve a doçura da Anattoli para os seus clientes.</p>
+                    <h2 className="text-4xl font-bold font-dancing mb-2 text-amber-500">Bem-vindo de Volta</h2>
+                    <p className="text-lg text-gray-200">Acesse sua conta para gerir suas encomendas e parceiros.</p>
                 </div>
             </div>
 
@@ -32,30 +32,15 @@ export default function RegisterPage() {
                             Voltar para Início
                         </Link>
                         <h2 className="text-3xl font-bold text-neutral-900 mb-2">
-                            Criar Conta de Parceiro
+                            Acesse sua conta
                         </h2>
                         <p className="text-neutral-600">
-                            Preencha os dados abaixo para iniciar sua jornada connosco.
+                            Insira suas credenciais para continuar.
                         </p>
                     </div>
 
-                    <div className="bg-white py-3 px-6 shadow-xl rounded-2xl border border-neutral-100">
+                    <div className="bg-white py-8 px-6 shadow-xl rounded-2xl border border-neutral-100">
                         <form className="space-y-1">
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-neutral-700">
-                                    Nome da Pastelaria
-                                </label>
-                                <div className="mt-1">
-                                    <input
-                                        id="name"
-                                        name="name"
-                                        type="text"
-                                        required
-                                        className="appearance-none block w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 sm:text-sm transition-shadow"
-                                    />
-                                </div>
-                            </div>
-
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium text-neutral-700">
                                     Email
@@ -66,21 +51,6 @@ export default function RegisterPage() {
                                         name="email"
                                         type="email"
                                         autoComplete="email"
-                                        required
-                                        className="appearance-none block w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 sm:text-sm transition-shadow"
-                                    />
-                                </div>
-                            </div>
-
-                            <div>
-                                <label htmlFor="phone" className="block text-sm font-medium text-neutral-700">
-                                    Whatsapp
-                                </label>
-                                <div className="mt-1">
-                                    <input
-                                        id="phone"
-                                        name="phone"
-                                        type="tel"
                                         required
                                         className="appearance-none block w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 sm:text-sm transition-shadow"
                                     />
@@ -102,18 +72,23 @@ export default function RegisterPage() {
                                 </div>
                             </div>
 
-                            <div>
-                                <label htmlFor="confirmPassword" className="block text-sm font-medium text-neutral-700">
-                                    Confirmar Senha
-                                </label>
-                                <div className="mt-1">
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center">
                                     <input
-                                        id="confirmPassword"
-                                        name="confirmPassword"
-                                        type="password"
-                                        required
-                                        className="appearance-none block w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 sm:text-sm transition-shadow"
+                                        id="remember-me"
+                                        name="remember-me"
+                                        type="checkbox"
+                                        className="h-4 w-4 text-amber-600 focus:ring-amber-500 border-neutral-300 rounded"
                                     />
+                                    <label htmlFor="remember-me" className="ml-2 block text-sm text-neutral-900">
+                                        Lembrar-me
+                                    </label>
+                                </div>
+
+                                <div className="text-sm">
+                                    <a href="#" className="font-medium text-amber-600 hover:text-amber-500">
+                                        Esqueceu a senha?
+                                    </a>
                                 </div>
                             </div>
 
@@ -122,7 +97,7 @@ export default function RegisterPage() {
                                     type="button"
                                     className="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-lg text-sm font-bold text-white bg-amber-700 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-all hover:scale-[1.02]"
                                 >
-                                    Criar Conta
+                                    Entrar
                                 </button>
                             </div>
                         </form>
@@ -134,14 +109,14 @@ export default function RegisterPage() {
                                 </div>
                                 <div className="relative flex justify-center text-sm">
                                     <span className="px-2 bg-white text-neutral-500">
-                                        Já tem uma conta?
+                                        Novo na Anattoli?
                                     </span>
                                 </div>
                             </div>
 
                             <div className="mt-6 text-center">
-                                <Link href="/login" className="font-bold text-amber-700 hover:text-amber-600 hover:underline">
-                                    Entrar na plataforma
+                                <Link href="/register" className="font-bold text-amber-700 hover:text-amber-600 hover:underline">
+                                    Criar Conta de Parceiro
                                 </Link>
                             </div>
                         </div>
